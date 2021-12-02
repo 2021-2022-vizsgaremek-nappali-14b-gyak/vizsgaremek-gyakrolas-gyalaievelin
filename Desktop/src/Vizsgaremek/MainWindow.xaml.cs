@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Futóverseny.Navigation;
+using Futóverseny.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,15 @@ namespace Futóverseny
         public MainWindow()
         {
             InitializeComponent();
+
+            // Statikus osztály a Navigate
+            // Eltárolja a nyitó ablakt, hogy azon tudjuk módosítani a "page"-ket
+            Navigate.mainWindow = this;
+            // Létrehozzuk a nyitó "UsuerControl" (WelcomPage)
+            WelcomePage welcomePage = new WelcomePage();
+            // Megjelnítjük a WelcomePage-t
+            Navigate.Navigation(welcomePage);
+
         }
     }
 }
