@@ -33,5 +33,28 @@ namespace Futóverseny
             // Megjelnítjük a WelcomePage-t
             Navigate.Navigation(welcomePage);
         }
+
+        //Egy ListView elemen bal egérgomb fel lett engedve
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender">ListView amin megnyomtuk a bal egér gombot</param>
+        /// <param name="e"></param>
+        private void ListView_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            ListView lvMenu = sender as ListView;
+            ListViewItem lvMenuItem = lvMenu.SelectedItem as ListViewItem;
+
+            if (lvMenuItem != null)
+            {
+                //Az x:name tulajdonságot vizsgáljuk
+                switch (lvMenuItem.Name)
+                {
+                    case "lviExit":
+                        Close();
+                        break;
+                }
+            }
+        }
     }
 }
