@@ -3,7 +3,14 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
-    <UseWPF>true</UseWPF>
+	  <PublishSingleFile>true</PublishSingleFile>
+	  <SelfContained>false</SelfContained>
+	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	  <UseWPF>true</UseWPF>
+	  <Version>0.0.1</Version>
+	  <Authors>Gyalai Evelin</Authors>
+	  <Company>Vasvári</Company>
+	  <Description>Kilépés gomb működik</Description>
   </PropertyGroup>
 
   <ItemGroup>
