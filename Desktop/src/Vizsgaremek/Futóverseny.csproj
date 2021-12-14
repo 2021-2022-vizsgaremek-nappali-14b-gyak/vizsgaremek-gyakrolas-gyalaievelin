@@ -10,13 +10,22 @@
 	  <Version>0.0.3</Version>
 	  <Authors>Gyalai Evelin</Authors>
 	  <Company>Vasvári</Company>
-	  <Description>Path módosítás</Description>
+	  <Description>0.0.3as verzió</Description>
   </PropertyGroup>
 
   <ItemGroup>
     <None Update="Icons\exitlogo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controls\" />
+    <Folder Include="Converters\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Validations\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
 
 </Project>
