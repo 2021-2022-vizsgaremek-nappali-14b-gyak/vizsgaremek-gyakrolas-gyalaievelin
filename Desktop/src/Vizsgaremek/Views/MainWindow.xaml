@@ -26,6 +26,13 @@
                     Menü 1.
                 </TextBlock>
             </ListViewItem>
+            <ListViewItem Height="40px" x:Name="lviProgramVersion" FontFamily="Century Gothic" FontSize="13" Foreground="White">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>
+                    Program verzió
+                    </TextBlock>
+                </StackPanel>
+            </ListViewItem>
             <ListViewItem Height="40px" x:Name="lviExit" FontFamily="Century Gothic" FontSize="13" Foreground="White">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Icons/exitlogo.png" Width="30px" Height="30px"/>                
@@ -34,6 +41,7 @@
                 </TextBlock>
                 </StackPanel>
             </ListViewItem>
+            
         </ListView>
 
     </Grid>

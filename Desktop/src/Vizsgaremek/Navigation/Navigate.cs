@@ -19,7 +19,13 @@ namespace Futóverseny.Navigation
         /// <param name="userControl">Erre az ablakra váltunk</param>
         public static void Navigation(UserControl userControl)
         {
+            mainWindow.PageContent.Children.Clear();
             mainWindow.PageContent.Children.Add(userControl);
+        }
+
+        public static void Navigation(Page userpPage)
+        {
+            mainWindow.PageContent.Children.Add(userpPage);
         }
     }
 
