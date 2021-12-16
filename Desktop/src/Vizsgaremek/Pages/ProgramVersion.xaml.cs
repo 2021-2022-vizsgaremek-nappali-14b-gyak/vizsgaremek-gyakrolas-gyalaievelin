@@ -13,16 +13,26 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Vizsgaremek.Navigation;
+
 namespace Vizsgaremek.Pages
 {
     /// <summary>
-    /// Interaction logic for WelcomePage.xaml
+    /// Interaction logic for ProgramVersion.xaml
     /// </summary>
-    public partial class WelcomePage : UserControl
+    public partial class ProgramVersion : UserControl
     {
-        public WelcomePage()
+        public ProgramVersion()
         {
             InitializeComponent();
+        }
+
+        // Vissza ikonra kattintva visszatér a nyitóoldalra
+        private void Image_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            WelcomePage welcomePage = new WelcomePage();
+            // Statikus osztály ezért az osztály nevét írjuk
+            Navigate.Navigation(welcomePage);
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using Futóverseny.Navigation;
-using Futóverseny.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,13 +13,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Futóverseny
+using Vizsgaremek.Navigation;
+using Vizsgaremek.Pages;
+
+namespace Vizsgaremek
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -34,9 +36,8 @@ namespace Futóverseny
             Navigate.Navigation(welcomePage);
         }
 
-        //Egy ListView elemen bal egérgomb fel lett engedve
         /// <summary>
-        /// 
+        /// ListView elemen bal egér gomb fel lett engedve
         /// </summary>
         /// <param name="sender">ListView amin megnyomtuk a bal egér gombot</param>
         /// <param name="e"></param>
@@ -44,17 +45,25 @@ namespace Futóverseny
         {
             ListView lvMenu = sender as ListView;
             ListViewItem lvMenuItem = lvMenu.SelectedItem as ListViewItem;
+            //ListViewItem lvMenuItem = (ListViewItem) lvMenu.SelectedItem;
 
             if (lvMenuItem != null)
             {
-                //Az x:name tulajdonságot vizsgáljuk
+                // x:Name tulajdonságot vizsgáljuk
                 switch (lvMenuItem.Name)
                 {
                     case "lviExit":
                         Close();
                         break;
+                    case "lviProgramVersion":
+                        ProgramVersion programVersion = new ProgramVersion();
+                        Navigate.Navigation(programVersion);
+                        break;
                 }
+                
             }
         }
+
+
     }
 }
