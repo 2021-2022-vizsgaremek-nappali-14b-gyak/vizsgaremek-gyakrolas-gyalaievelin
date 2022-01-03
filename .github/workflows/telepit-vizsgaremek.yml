@@ -5,7 +5,7 @@ on:
    tags:
      - "d*"
 env:
- PROJECT_PATH: Desktop/src/Vizsgaremek/Futóverseny.csproj
+ PROJECT_PATH: Desktop/src/Vizsgaremek/Vizsgaremek.csproj
 
 jobs:
  deploy:
