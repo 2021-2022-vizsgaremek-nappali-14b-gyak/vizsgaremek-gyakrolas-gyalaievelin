@@ -19,6 +19,10 @@
                 <Label>Program verzió:</Label>
                 <TextBox x:Name="txtVersion" Text="{Binding Path=Version}" IsReadOnly="True"/>
             </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label>Programnév:</Label>
+                <TextBox x:Name="txtTitle" Text="{Binding Path=Title}" IsReadOnly="True"/>
+            </StackPanel>
              </StackPanel>
         </StackPanel>    
 </UserControl>
