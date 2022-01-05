@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Octokit;
 using System.Reflection;
+using System.Diagnostics;
 
 namespace Vizsgaremek.Models
 {
@@ -14,12 +15,15 @@ namespace Vizsgaremek.Models
         private string title;
         private string description;
         private string company;
+        private string authors;
 
 
         public Version Version
         {
             get
             {
+               
+
                 var assembly = Assembly.GetExecutingAssembly();
                 var assemblyVerzio = assembly.GetName().Version;
                 return assemblyVerzio;
@@ -30,7 +34,7 @@ namespace Vizsgaremek.Models
         {
             get
             {
-                return "";
+                return authors;
             }
         }
 
@@ -60,6 +64,7 @@ namespace Vizsgaremek.Models
 
         public ProgramInfo()
         {
+            GetGithubCollaboratorsName();
             Assembly assembly = Assembly.GetExecutingAssembly();
 
             foreach (Attribute attr in Attribute.GetCustomAttributes(assembly))
@@ -71,6 +76,31 @@ namespace Vizsgaremek.Models
                 else if (attr.GetType() == typeof(AssemblyCompanyAttribute))
                     company = ((AssemblyCompanyAttribute)attr).Company;
 
+            }
+        }
+
+        private async void GetGithubCollaboratorsName()
+        {
+            string reponame = "vizsgaremek-gyakrolas-gyalaievelin";
+            int repoId = 431759060;
+            var client = new GitHubClient(new ProductHeaderValue(reponame));
+
+            // fejlesztők meghatározása
+            try
+            {
+                var collaborators = await client.Repository.GetAllContributors(repoId);
+                string collaboratorsName = string.Empty;
+                foreach (var collaborator in collaborators)
+                {
+                    string collaboratorLoginName = collaborator.Login;
+                    var user = await client.User.Get(collaboratorLoginName);
+                    collaboratorsName += user.Name + " (" + user.Login + ") ";
+                }
+                authors = collaboratorsName;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
             }
         }
 
