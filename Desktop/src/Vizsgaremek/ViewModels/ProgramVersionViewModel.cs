@@ -37,6 +37,30 @@ namespace Vizsgaremek.ViewModels
             }
         }
 
+        public string Description
+        {
+            get
+            {
+                return programInfo.Description.ToString();
+            }
+            set
+            {
+                Description = value;
+            }
+        }
+
+        public string Company
+        {
+            get
+            {
+                return programInfo.Company.ToString();
+            }
+            set
+            {
+                Company = value;
+            }
+        }
+
 
 
         public ProgramVersionViewModel()

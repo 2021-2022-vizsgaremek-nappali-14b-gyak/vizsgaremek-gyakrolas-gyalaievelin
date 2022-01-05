@@ -50,6 +50,14 @@ namespace Vizsgaremek.Models
             }
         }
 
+        public string Company
+        {
+            get
+            {
+                return company;
+            }
+        }
+
         public ProgramInfo()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
