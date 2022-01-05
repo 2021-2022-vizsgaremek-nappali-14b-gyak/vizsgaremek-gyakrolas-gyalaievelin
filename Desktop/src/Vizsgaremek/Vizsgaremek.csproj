@@ -7,11 +7,11 @@
 	  <SelfContained>false</SelfContained>
 	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
 	  <UseWPF>true</UseWPF>
-	  <Version>0.0.3.0</Version>
-	  <Authors>Gyuris Csaba</Authors>
+	  <Version>0.0.4.0</Version>
+	  <Authors>Gyalai Evelin</Authors>
 	  <Company>Vasvári</Company>
 	  <Product />
-	  <Description>Program verzió navigáció működik</Description>
+	  <Description>Programnév teszt</Description>
   </PropertyGroup>
 
   <ItemGroup>

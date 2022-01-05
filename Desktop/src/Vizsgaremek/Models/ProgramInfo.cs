@@ -34,6 +34,30 @@ namespace Vizsgaremek.Models
             }
         }
 
+        public string Title
+        {
+            get
+            {                
+                return title;
+            }
+        }
+
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+        }
+
+        public string Company
+        {
+            get
+            {
+                return company;
+            }
+        }
+
         public ProgramInfo()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
