@@ -30,6 +30,7 @@ namespace Vizsgaremek
             //Különböző ablakok adatai
             mainWindowViewModel = new MainWindowViewModel();
             databaseSourceViewModel = new DatabaseSourceViewModel();
+            mainWindowViewModel.SelectedSource1 = databaseSourceViewModel.SelectedDatabaseSource;
             InitializeComponent();
             // Statikus osztály a Navigate
             // Eltárolja a nyitó ablakt, hogy azon tudjuk módosítani a "page"-ket
