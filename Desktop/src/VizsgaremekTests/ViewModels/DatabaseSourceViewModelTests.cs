@@ -30,13 +30,13 @@ namespace Vizsgaremek.ViewModels.Tests
         public void DatabaseSourceViewModelTestDevops()
         {
             DatabaseSourceViewModel databaseSourceViewModel = new DatabaseSourceViewModel();
-            //A felhasználó rákattint a localhost szóra
-            databaseSourceViewModel.SelectedDatabaseSource = "localhost";
-            DbSource expectedDbSource = DbSource.LOCALHOST;
+            //A felhasználó rákattint a devops szóra
+            databaseSourceViewModel.SelectedDatabaseSource = "devops";
+            DbSource expectedDbSource = DbSource.DEVOPS;
 
             DbSource actualDbSource = databaseSourceViewModel.DbSource;
 
-            Assert.AreEqual(expectedDbSource, actualDbSource, "A kiválasztott adatbázis a 'localhost', de nem váltott át DbSource.LOCALHOST-ra");
+            Assert.AreEqual(expectedDbSource, actualDbSource, "A kiválasztott adatbázis a 'devops', de nem váltott át DbSource.DEVOPS-ra");
 
         }
 
@@ -45,12 +45,12 @@ namespace Vizsgaremek.ViewModels.Tests
         {
             DatabaseSourceViewModel databaseSourceViewModel = new DatabaseSourceViewModel();
             //A felhasználó rákattint a localhost szóra
-            databaseSourceViewModel.SelectedDatabaseSource = "localhost";
-            DbSource expectedDbSource = DbSource.LOCALHOST;
+            databaseSourceViewModel.SelectedDatabaseSource = "";
+            DbSource expectedDbSource = DbSource.NONE;
 
             DbSource actualDbSource = databaseSourceViewModel.DbSource;
 
-            Assert.AreEqual(expectedDbSource, actualDbSource, "A kiválasztott adatbázis a 'localhost', de nem váltott át DbSource.LOCALHOST-ra");
+            Assert.AreEqual(expectedDbSource, actualDbSource, "A kiválasztott adatbázis a '', de nem váltott át DbSource.NONE-ra");
 
         }
     }
